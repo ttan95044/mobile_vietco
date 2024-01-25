@@ -1,8 +1,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_vietco/home_screen.dart';
-import 'package:mobile_vietco/side_bar.dart';
+import 'package:mobile_vietco/screen/home_screen.dart';
+import 'package:mobile_vietco/side_bar/side_bar.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_vietco/screen/map_view_screen.dart';
 // import 'package:testapp1/test.dart';
 
 class SideBar extends StatefulWidget {
@@ -23,7 +24,7 @@ class _SideBarState extends State<SideBar> {
             Expanded(
               child: ListView(
                 children: const <Widget>[
-                  SidebarItem(icon: Icons.error_outline, text: 'Settings'),
+                  SidebarItem(icon: Icons.map, text: 'Map'),
                   SizedBox(height: 10),
                   SidebarItem(icon: Icons.person_outline, text: 'Profile'),
                   SizedBox(height: 10),
@@ -90,12 +91,12 @@ class SidebarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // if (text == 'Settings') {
-        //   Navigator.push(
-        //     context,
-        //     MaterialPageRoute(builder: (context) => SettingsScreen()),
-        //   );
-        // }
+        if (text == 'Map') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const MapViewScreen()),
+          );
+        }
         // Xử lý khi người dùng chọn mục trong sidebar
         print('Selected: $text');
       },
