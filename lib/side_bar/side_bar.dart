@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_vietco/screen/map_view_screen.dart';
+import 'package:mobile_vietco/screen/qr_code/qr_code.dart';
 // import 'package:testapp1/test.dart';
 
 class SideBar extends StatefulWidget {
@@ -26,7 +27,7 @@ class _SideBarState extends State<SideBar> {
                 children: const <Widget>[
                   SidebarItem(icon: Icons.map, text: 'Map'),
                   SizedBox(height: 10),
-                  SidebarItem(icon: Icons.person_outline, text: 'Profile'),
+                  SidebarItem(icon: Icons.qr_code, text: 'QR code'),
                   SizedBox(height: 10),
                   SidebarItem(
                       icon: Icons.chat_bubble_outline, text: 'Messages'),
@@ -95,6 +96,12 @@ class SidebarItem extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const MapViewScreen()),
+          );
+        }
+        if (text == 'QR code') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const QrCode()),
           );
         }
         // Xử lý khi người dùng chọn mục trong sidebar
