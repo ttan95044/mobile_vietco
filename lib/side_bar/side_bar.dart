@@ -101,7 +101,7 @@ class SidebarItem extends StatelessWidget {
         if (text == 'QR code') {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const QrCode()),
+            MaterialPageRoute(builder: (context) => QRScannerWidget()),
           );
         }
         // Xử lý khi người dùng chọn mục trong sidebar
