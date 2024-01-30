@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_vietco/screen/qr_code/display_qr_data.dart';
+import 'package:mobile_vietco/screen/qr_code/qr_scanner_overlay.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class QRScannerWidget extends StatefulWidget {
@@ -14,9 +15,40 @@ class _QRScannerWidgetState extends State<QRScannerWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: QRView(
-        key: qrKey,
-        onQRViewCreated: _onQRViewCreated,
+      body: Stack(
+        children: [
+          QRView(
+            key: qrKey,
+            onQRViewCreated: _onQRViewCreated,
+          ),
+          Positioned(
+            top: 20.0,
+            left: 20.0,
+            child: IconButton(
+              icon: Icon(
+                Icons.arrow_back_ios_sharp,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ),
+          Positioned(
+            bottom: 20.0,
+            left: 20.0,
+            child: IconButton(
+              icon: Icon(
+                Icons.image,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                // Xử lý sự kiện khi người dùng bấm nút upload ảnh
+              },
+            ),
+          ),
+          QRScannerOverlay(overlayColour: Colors.black.withOpacity(0.5))
+        ],
       ),
     );
   }
