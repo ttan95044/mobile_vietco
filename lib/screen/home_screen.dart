@@ -77,9 +77,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 40,
-            ),
             Column(
               children: [
                 SingleChildScrollView(
@@ -179,7 +176,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(
                           height: 250,
                         ),
-                        Text(
+                        SelectableText(
                           scannedText,
                           style: const TextStyle(fontSize: 20),
                         )
@@ -223,7 +220,7 @@ class _HomeScreenState extends State<HomeScreen> {
       scannedText = "";
       for (TextBlock block in recognizedText.blocks) {
         for (TextLine line in block.lines) {
-          scannedText = scannedText + line.text + "\n";
+          scannedText = "$scannedText${line.text}\n";
         }
       }
     } catch (e) {

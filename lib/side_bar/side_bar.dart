@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_vietco/screen/map_view_screen.dart';
 import 'package:mobile_vietco/screen/qr_code/qr_code.dart';
+import 'package:mobile_vietco/screen/selectable_text/selectable_text_screen.dart';
 // import 'package:testapp1/test.dart';
 
 class SideBar extends StatefulWidget {
@@ -30,7 +31,7 @@ class _SideBarState extends State<SideBar> {
                   SidebarItem(icon: Icons.qr_code, text: 'QR code'),
                   SizedBox(height: 10),
                   SidebarItem(
-                      icon: Icons.chat_bubble_outline, text: 'Messages'),
+                      icon: Icons.chat_bubble_outline, text: 'Setlet Table'),
                   SizedBox(height: 10),
                   SidebarItem(icon: Icons.bookmark_border, text: 'Saved'),
                   SizedBox(height: 10),
@@ -102,6 +103,12 @@ class SidebarItem extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => QRScannerWidget()),
+          );
+        }
+        if (text == 'Setlet Table') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SelectableTextScreen()),
           );
         }
         // Xử lý khi người dùng chọn mục trong sidebar
